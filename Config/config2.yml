@@ -1,4 +1,4 @@
-token: "TokenTimeIsBackBuddys"  # Lichess OAuth2 Token.
+hahahhahahahabahahahahahqhahahtoken: "TokenTimeIsBackBuddys"  # Lichess OAuth2 Token.
 
 engines:
   standard:
@@ -6,7 +6,7 @@ engines:
     name: "stockfish"
     ponder: true
     silence_stderr: false
-    move_overhead_multiplier: 24.0
+    move_overhead_multiplier: 2.0
     uci_options:
       Threads: 4
       Hash: 2508
@@ -20,7 +20,7 @@ engines:
     name: "stockfish"
     ponder: true
     silence_stderr: false
-    move_overhead_multiplier: 23.0
+    move_overhead_multiplier: 1.0
     uci_options:
       Threads: 4
       Hash: 2248
@@ -35,7 +35,7 @@ engines:
     name: "stockfish"
     ponder: true
     silence_stderr: false
-    move_overhead_multiplier: 22.0
+    move_overhead_multiplier: 20
     uci_options:
       Threads: 4
       Hash: 2248
@@ -184,7 +184,7 @@ offer_draw:
 
 resign:
   enabled: false
-  score: -1000
+  score: -100000000000
   consecutive_moves: 6
   against_humans: false
 
@@ -233,14 +233,3 @@ whitelist:
 books:
   Torma: "./engines/Torma.bin"
   Optimus: "./engines/OPTIMUS2502.bin"
-  Black: "./engines/Optical.bin"
-  Win: "./engines/win.bin"
-  White: "./engines/white.bin"
-  Titans: "./engines/Titans.bin"
-  Stay: "./engines/terimakichud.bin"
-  Chess960: "./engines/merged.bin"
-  Ches: "./engines/book.bin"
-  White1: "./engines/lila1.bin"
-  White2: "./engines/lila2.bin"
-  Black1: "./engines/scala1.bin"
-  Black2: "./engines/scala2.bin"
