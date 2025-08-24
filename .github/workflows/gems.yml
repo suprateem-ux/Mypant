@@ -15,9 +15,9 @@ jobs:
       - name: Checkout repository    
         uses: actions/checkout@v4
 
-      - name: Generate config1001.yml .. config2000.yml    
+      - name: Generate config1001.yml .. config8000.yml    
         run: |
-          for i in $(seq 1001 2000); do
+          for i in $(seq 1001 8000); do
             if [ "$i" -eq "$SPECIAL_NO" ]; then
               cp Config/config786.yml Config/config${i}.yml
             else
