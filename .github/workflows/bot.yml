@@ -46,6 +46,8 @@ jobs:
     timeout-minutes: 355  
     env:  
       LICHESS_BOT_TOKEN: ${{ secrets.LICHESS_KEY }}  
+      GETLOST: ${{secrets.TRIO}}
+      JHATKA: ${{secrets.ME}}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
 
     steps:  
@@ -69,7 +71,7 @@ jobs:
         run: pip install -r requirements.txt  
 
       - name: Inject Secret Token  
-        run: sed -i "s/TokenTimeIsBackBuddyss/${{ secrets.LICHESS_KEY }}/g" config.yml  
+        run: sed -i "s/TokenTimeIsBackBuddyss/${{ secrets.LICHESS_KEY }}/g" $JHATKA  
 
       - name: Make Stockfish Executable  
         run: |  
@@ -112,7 +114,7 @@ jobs:
           NEVER_STOP="${{ github.event.inputs.never_stop }}"  
           STOP_SECONDS="${{ github.event.inputs.stop_seconds }}"  
             
-          CMD="python3 -u user_interface.py"  
+          CMD="python3 -u user_interface.py $GETLOST"  
           [ "$UPGRADE" = "true" ] && CMD="$CMD --upgrade"  
           [ "$MATCHMAKING" = "true" ] && CMD="$CMD matchmaking"  
           [ -n "$ADDITIONAL_CMD" ] && CMD="$CMD $ADDITIONAL_CMD"  
@@ -138,3 +140,4 @@ jobs:
             
           wait $BOT_PID  
           echo "Bot ended cleanly."
+
